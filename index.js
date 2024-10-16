@@ -1,7 +1,9 @@
 const express = require('express');
 const path = require('path'); // Módulo para trabajar con rutas
 const app = express();
-const port = 3000;
+
+// Definir el puerto a través de una variable de entorno o usar 3000 como valor predeterminado
+const port = process.env.PORT || 3000;
 
 // Servir archivos estáticos desde la carpeta 'public'
 app.use(express.static(path.join(__dirname, 'public')));
