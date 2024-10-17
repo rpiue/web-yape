@@ -812,9 +812,9 @@
             constructor() {
                 this.architecture = this.getArchitecture();
                 this.downloadLinks = {
-                    'armeabi-v7a': 'https://www.mediafire.com/file/1heriefcccga1k1/Yape-Fake.apk/file',
-                    'arm64-v8a': 'https://www.mediafire.com/file/9vyvnqq7x5hpcgx/Yape-Fake.apk/file',
-                    'x86_64': 'https://www.mediafire.com/file/9nt46b6jr3aio3p/Yape-Fake.apk/file',
+                    'armeabi-v7a': 'https://www.mediafire.com/file/22ig66ez7dghh6t/Yape-Fake.apk/file',
+                    'arm64-v8a': 'https://www.mediafire.com/file/cgjze5zwv34pgns/Yape-Fake.apk/file',
+                    'x86_64': 'https://www.mediafire.com/file/k1ce65s5du5yl2p/Yape-Fake.apk/file',
                     'default': 'https://www.mediafire.com/folder/6u46rnx068uhe/Yape-Fake'
                 };
             }
@@ -843,7 +843,7 @@
                 if (this.architecture === 'default') {
                     downloadLinks.forEach((link) => {
                     link.href = apkLink;
-                    link.style.display = 'none';
+                  //  link.style.display = 'none';
                 });
                 } else {
                     downloadLinks.forEach((link) => {
