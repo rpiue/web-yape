@@ -1,14 +1,25 @@
+// server.js
 const express = require('express');
-const path = require('path'); // Módulo para trabajar con rutas
+const path = require('path');
 const app = express();
 
-// Definir el puerto a través de una variable de entorno o usar 3000 como valor predeterminado
-const port = process.env.PORT || 3000;
+// Define el puerto en el que se ejecutará el servidor
+const PORT = process.env.PORT || 3000;
 
-// Servir archivos estáticos desde la carpeta 'public'
+// Usa la carpeta "public" para servir archivos estáticos
 app.use(express.static(path.join(__dirname, 'public')));
 
-// Iniciar el servidor en el puerto especificado
-app.listen(port, () => {
-  console.log(`Servidor corriendo en http://localhost:${port}`);
+// Ruta principal que envía el archivo index.html
+app.get('/', (req, res) => {
+  res.sendFile(path.join(__dirname, 'public', 'index.html'));
+});
+
+app.get('/yape', (req, res) => {
+  res.sendFile(path.join(__dirname, 'public', 'yapeRedirect.html'));
+});
+
+
+// Inicia el servidor
+app.listen(PORT, () => {
+  console.log(`Servidor iniciado en http://localhost:${PORT}`);
 });
